@@ -14,9 +14,17 @@
                 <div class="swiper-scrollbar" slot="scrollbar"></div>
             </swiper>
         </div>
+        <div class="custom">
+            <input type="text" v-focus/>
+        </div>
+        <div class="map">
+            <div id="container" class="mymap"></div>
+        </div>
     </div>
 </template>
 <script>
+import Vue from 'vue'
+import AMap from 'AMap'
 export default {
     name: "ReverseDetails",
     data(){
@@ -45,8 +53,34 @@ export default {
             }
         }
     },
+    created(){
+        Vue.directive('focus',{
+            inserted:function (el){
+                el.focus()
+            }
+        })
+    },
     mounted(){
-        
+        this.loadmap();
+    },
+    methods:{
+        loadmap(){
+            const map = new AMap.Map('container',{
+                zoom: 11,
+                center: [116.397428,39.90923],
+                viewMode:'3D'
+            });
+            AMap.plugin('AMap.Driving',function(){
+                var driving = new AMap.Driving({
+                    policy: AMap.DrivingPolicy.LEAST_TIME
+                })
+                var startLngLat = [116.379028,39.865042]
+                var endLngLat = [116.427281,39.903719]
+                driving.search(startLngLat,endLngLat,function(status,result){
+                    
+                })
+            })
+        }
     }
 }
 </script>
@@ -62,6 +96,12 @@ export default {
             color: #FFFFFF;
             font-size: 20px;
         }
+    }
+    .mymap{
+        width: 300px;
+        height: 300px;
+        margin: 10px auto;
+        border: 1px solid #333333;
     }
 }
 </style>
