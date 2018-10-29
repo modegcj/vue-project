@@ -1,0 +1,16 @@
+npx是一个工具，旨在提高从npm注册表使用软件包的体验 ，npm使得它非常容易地安装和管理托管在注册表上的依赖项，npx使得使用CLI工具和其他托管在注册表。
+
+使用本地安装的工具没有npm run-script：
+将cowsay作为本地devDependency进行安装，并使用'$ npx cowsay'来运行它
+
+执行one-off commands：
+'$ npx create-react-app my-cool-new-app'安装一个临时的创建应答程序并调用它，而不会污染全局安装或需要多个步骤
+
+运行不同Node.js版本的命令：
+'npx -p node @ <version> node -v'可以用来执行节点版本的一次性运行。
+
+npm run-script互动发展
+`$ npx -p cowsay -p lolcatjs -c'echo"$ npm _package_name @ $ npm_package_version"|cowsay | lolcatjs'`安装cowsay和lolcatjs，并使脚本从运行期间访问一堆"$ npm_"变量。
+
+shell自动回退：
+将.zshrc中的npx自动回退意味着你可以在没有引用npx的情况下执行`$ ember-cli @ latest...`

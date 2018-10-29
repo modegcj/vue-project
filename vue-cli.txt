@@ -11,9 +11,18 @@ cnpm insatll -g @vue/cli
 新建项目
 vue create my-project
 项目启动
-cnpm run serve
+cnpm run serve或者yarn serve或者npx vue-cli-service serve
 打包
 cnpm run build
+
+vue插件的使用：
+使用vue插件，用vue add命令
+例：vue add @vue/eslint
+这个命令将@vue/eslint解析为完整的包名@vue/cli-plugin-eslint，然后从npm安装它，调用它的生成器
+这个命令和vue add @vue/cli-plugin-eslint等价
+如果不带@vue前缀，该命令会换做解析一个unscoped的包。
+
+
 
 细节的配置询问:
 TypeScript:
