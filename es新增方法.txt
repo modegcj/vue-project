@@ -1,0 +1,52 @@
+ES6新增的数组方法：
+1.Array.from()方法
+let json = {
+  '0':'hello',
+  '1':'123',
+  '2':'panda',
+  length:3
+}
+let arr = Array.from(json);
+console.log(arr);  //["hello","123","panda"]
+
+2.Array.of()方法 --将一组值转变为数组
+let arr = Array.of(1,2,33,5);
+console.log(arr);  //[1,2,33,5]
+
+3.find()方法
+let arr = [1,2,3,5,7];
+console.log(arr.find((value,index,arrr)=>{
+  return value > 5
+}))   //7
+
+4.fill()方法  --使用fill()方法给定值填充数组
+fill方法用于空数组的初始化很方便：new Array(3).fill(7); //[7,7,7]
+fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置:
+let arr = [0,1,2,3,4,5,6,7];
+arr.fill('error',2,3);
+console.log(arr); //[0,1,"error",3,4,5,6,7]
+
+5.遍历数组的方法：entries()、values()、keys()
+这三个方法都是返回一个遍历器对象，可用for...of循环遍历，唯一区别：keys()是对键名的遍历、values()对键值的遍历、entries()是对键值对的遍历。
+for(let item of ['a','b'].keys()){
+  console.log(item); //0   //1
+}
+for(let item of ['a','b'].values()){
+  console.log(item);//a    //b
+}
+let arr = [0,1];
+for(let item of arr.entries()){
+  console.log(item);//[0,0]   //[1,1]
+}
+for(let [index,item] of arr4.entries()){
+  console.log(index+":"+item);//0:0   //1:1
+}
+如果不用for...of进行遍历，可用使用next()方法手动跳到下一个值。
+let arr =['a','b','c'];
+let entries = arr.entries();
+console.log(entries.next().value);//[0, "a"]
+console.log(entries.next().value);//[1, "b"]
+console.log(entries.next().value);//[2, "c"]
+console.log(entries.next().value);//undefined
+
+
