@@ -1,84 +1,84 @@
-cnpm install -g vue-cli
-vue init webpack {{ÏîÄ¿Ãû}}
+ï»¿cnpm install -g vue-cli
+vue init webpack {{é¡¹ç›®å}}
 
 @vue-cli 3.0
-ÖĞÎÄÎÄµµ£ºhttps://cli.vuejs.org/zh/guide/ 
-Ê¹ÓÃrouter£ºvue add router
-Ê¹ÓÃvuex£ºvue add vuex
+ä¸­æ–‡æ–‡æ¡£ï¼šhttps://cli.vuejs.org/zh/guide/ 
+ä½¿ç”¨routerï¼švue add router
+ä½¿ç”¨vuexï¼švue add vuex
 <!--
-°²×°:
+å®‰è£…:
 cnpm insatll -g @vue/cli
-ĞÂ½¨ÏîÄ¿
+æ–°å»ºé¡¹ç›®
 vue create my-project
-ÏîÄ¿Æô¶¯
-cnpm run serve»òÕßyarn serve»òÕßnpx vue-cli-service serve
-´ò°ü
+é¡¹ç›®å¯åŠ¨
+cnpm run serveæˆ–è€…yarn serveæˆ–è€…npx vue-cli-service serve
+æ‰“åŒ…
 cnpm run build
 
-vue²å¼şµÄÊ¹ÓÃ£º
-Ê¹ÓÃvue²å¼ş£¬ÓÃvue addÃüÁî
-Àı£ºvue add @vue/eslint
-Õâ¸öÃüÁî½«@vue/eslint½âÎöÎªÍêÕûµÄ°üÃû@vue/cli-plugin-eslint£¬È»ºó´Ónpm°²×°Ëü£¬µ÷ÓÃËüµÄÉú³ÉÆ÷
-Õâ¸öÃüÁîºÍvue add @vue/cli-plugin-eslintµÈ¼Û
-Èç¹û²»´ø@vueÇ°×º£¬¸ÃÃüÁî»á»»×ö½âÎöÒ»¸öunscopedµÄ°ü¡£
+vueæ’ä»¶çš„ä½¿ç”¨ï¼š
+ä½¿ç”¨vueæ’ä»¶ï¼Œç”¨vue addå‘½ä»¤
+ä¾‹ï¼švue add @vue/eslint
+è¿™ä¸ªå‘½ä»¤å°†@vue/eslintè§£æä¸ºå®Œæ•´çš„åŒ…å@vue/cli-plugin-eslintï¼Œç„¶åä»npmå®‰è£…å®ƒï¼Œè°ƒç”¨å®ƒçš„ç”Ÿæˆå™¨
+è¿™ä¸ªå‘½ä»¤å’Œvue add @vue/cli-plugin-eslintç­‰ä»·
+å¦‚æœä¸å¸¦@vueå‰ç¼€ï¼Œè¯¥å‘½ä»¤ä¼šæ¢åšè§£æä¸€ä¸ªunscopedçš„åŒ…ã€‚
 
 
 
-Ï¸½ÚµÄÅäÖÃÑ¯ÎÊ:
+ç»†èŠ‚çš„é…ç½®è¯¢é—®:
 TypeScript:
-ÊÇ·ñÊ¹ÓÃclass·ç¸ñµÄ×é¼şÓï·¨£ºUse class-style component syntax?
-ÊÇ·ñÊ¹ÓÃbabel×ö×ªÒå£ºUse Babel alongside TypeScript for auto-detected polyfills?
+æ˜¯å¦ä½¿ç”¨classé£æ ¼çš„ç»„ä»¶è¯­æ³•ï¼šUse class-style component syntax?
+æ˜¯å¦ä½¿ç”¨babelåšè½¬ä¹‰ï¼šUse Babel alongside TypeScript for auto-detected polyfills?
 CSS Pre-processors:
-Ñ¡ÔñCSSÔ¤´¦ÀíÀàĞÍ£ºPick a CSS pre-processor
+é€‰æ‹©CSSé¢„å¤„ç†ç±»å‹ï¼šPick a CSS pre-processor
 Linter / Formatter
-Ñ¡ÔñLinter / Formatter¹æ·¶ÀàĞÍ£ºPick a linter / formatter config
-Ñ¡Ôñlint·½Ê½£¬±£´æÊ±¼ì²é/Ìá½»Ê±¼ì²é£ºPick additional lint features
+é€‰æ‹©Linter / Formatterè§„èŒƒç±»å‹ï¼šPick a linter / formatter config
+é€‰æ‹©lintæ–¹å¼ï¼Œä¿å­˜æ—¶æ£€æŸ¥/æäº¤æ—¶æ£€æŸ¥ï¼šPick additional lint features
 Texting:
-Ñ¡ÔñUnit²âÊÔ·½Ê½
-Ñ¡ÔñE2E²âÊÔ·½Ê½
-Ñ¡ÔñBabel,PostCSS,ESLintµÈ×Ô¶¨ÒåÅäÖÃµÄ´æ·ÅÎ»ÖÃWhere do you prefer placing config for Babel,PostCSS,ESLint,etc?
-vue.config.js×Ô¶¨ÒåÅäÖÃ
-vue.config.jsÍêÕûÄ¬ÈÏÅäÖÃ
+é€‰æ‹©Unitæµ‹è¯•æ–¹å¼
+é€‰æ‹©E2Eæµ‹è¯•æ–¹å¼
+é€‰æ‹©Babel,PostCSS,ESLintç­‰è‡ªå®šä¹‰é…ç½®çš„å­˜æ”¾ä½ç½®Where do you prefer placing config for Babel,PostCSS,ESLint,etc?
+vue.config.jsè‡ªå®šä¹‰é…ç½®
+vue.config.jså®Œæ•´é»˜è®¤é…ç½®
 module.exports = {
-  //»ù±¾Â·¾¶
+  //åŸºæœ¬è·¯å¾„
   baseUrl:'/',
-  //Êä³öÎÄ¼şÄ¿Â¼
+  //è¾“å‡ºæ–‡ä»¶ç›®å½•
   outputDir:'dist',
-  // eslint-loaderÊÇ·ñÔÚ±£´æµÄÊ±ºò¼ì²é
+  // eslint-loaderæ˜¯å¦åœ¨ä¿å­˜çš„æ—¶å€™æ£€æŸ¥
   lintOnSave:true,
   //use the full build with in-browser compiler?
   //https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only
   compiler:false,
-  //webpackÅäÖÃ
+  //webpacké…ç½®
   //see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack:()=>{},
   configureWebpack:()=>{},
-  //vue-loader ÅäÖÃÏî
+  //vue-loader é…ç½®é¡¹
   //https://vue-loader.vuejs.org/en/options.html
   vueLoader:{},
-  //Éú²ú»·¾³ÊÇ·ñÉú³ÉsourceMapÎÄ¼ş
+  //ç”Ÿäº§ç¯å¢ƒæ˜¯å¦ç”ŸæˆsourceMapæ–‡ä»¶
   productionSourceMap:true,
-  //cssÏà¹ØÅäÖÃ
+  //cssç›¸å…³é…ç½®
   css:{
-    //ÊÇ·ñÊ¹ÓÃcss·ÖÀë²å¼şExtractTextPlugin
+    //æ˜¯å¦ä½¿ç”¨cssåˆ†ç¦»æ’ä»¶ExtractTextPlugin
     extract:true,
-    //¿ªÆôCSS source maps?
+    //å¼€å¯CSS source maps?
     sourceMap:false,
-    //cssÔ¤ÉèÆ÷ÅäÖÃÏî
+    //cssé¢„è®¾å™¨é…ç½®é¡¹
     loaderOptions:{},
-    //Æô¶¯CSS modules for all css / pre-processor files
+    //å¯åŠ¨CSS modules for all css / pre-processor files
     modules: false
   },
   //use thread-loader for babel & TS in production build
   //enabled by default if the machine has more than 1 cores
   parallel:require('os').cpus().length > 1,
-  //ÊÇ·ñÆôÓÃdll
+  //æ˜¯å¦å¯ç”¨dll
   //See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
   dll:false,
-  // PWA²å¼şÏà¹ØÅäÖÃ
+  // PWAæ’ä»¶ç›¸å…³é…ç½®
   // see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
   pwa:{},
-  //webpack-dev-serverÏà¹ØÅäÖÃ
+  //webpack-dev-serverç›¸å…³é…ç½®
   devServer:{
     open:process.platform === 'darwin',
     host:'0.0.0.0',
@@ -88,13 +88,13 @@ module.exports = {
     proxy:null,
     before:app => {}
   },
-  //µÚÈı·½²å¼şÅäÖÃ
+  //ç¬¬ä¸‰æ–¹æ’ä»¶é…ç½®
   pluginOptions:{
     //...
   }
 }
 
-ÉèÖÃ´úÀí
+è®¾ç½®ä»£ç†
 #string
 module.exports = {
   devServer: {
@@ -117,8 +117,8 @@ module.export = {
   }
 }
 
-ÆôÓÃdll
-ÆôÓÃdllºó£¬ÎÒÃÇµÄ¶¯Ì¬¿âÎÄ¼şÃ¿´Î´ò°üÉú³ÉµÄvendorµÄ[chunkhash]Öµ¾Í»áÒ»Ñù£¬ÆäÖµ¿ÉÒÔÊÇtrue/false,Ò²¿ÉÒÔÖÆ¶¨ÌØ¶¨µÄ´úÂë¿â¡£
+å¯ç”¨dll
+å¯ç”¨dllåï¼Œæˆ‘ä»¬çš„åŠ¨æ€åº“æ–‡ä»¶æ¯æ¬¡æ‰“åŒ…ç”Ÿæˆçš„vendorçš„[chunkhash]å€¼å°±ä¼šä¸€æ ·ï¼Œå…¶å€¼å¯ä»¥æ˜¯true/false,ä¹Ÿå¯ä»¥åˆ¶å®šç‰¹å®šçš„ä»£ç åº“ã€‚
 module.exports = {
   dll: true
 }
@@ -129,15 +129,15 @@ module.exports = {
   ]
 }
 
-¾²Ì¬×ÊÔ´Â·¾¶
-Ïà¶ÔÂ·¾¶
->¾²Ì¬×ÊÔ´Â·¾¶ÒÑ@¿ªÍ·´ú±í<projectRoot>/src
->¾²Ì¬×ÊÔ´Â·¾¶ÒÑ~¿ªÍ·£¬¿ÉÒÔÒıÈënode modulesÄÚµÄ×ÊÔ´
-publicÎÄ¼ş¼ĞÀïµÄ¾²Ì¬×ÊÔ´ÒıÓÃ
-#ÔÚ public/index.htmlÖĞÒıÓÃ¾²Ì¬×ÊÔ´
+é™æ€èµ„æºè·¯å¾„
+ç›¸å¯¹è·¯å¾„
+>é™æ€èµ„æºè·¯å¾„å·²@å¼€å¤´ä»£è¡¨<projectRoot>/src
+>é™æ€èµ„æºè·¯å¾„å·²~å¼€å¤´ï¼Œå¯ä»¥å¼•å…¥node moduleså†…çš„èµ„æº
+publicæ–‡ä»¶å¤¹é‡Œçš„é™æ€èµ„æºå¼•ç”¨
+#åœ¨ public/index.htmlä¸­å¼•ç”¨é™æ€èµ„æº
 <%= webpackConfig.output.publicPath %>
 <link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico" rel="external nofollow">
-#vue templatesÖĞ£¬ĞèÒªÔÚdateÖĞ¶¨ÒåbaseUrl
+#vue templatesä¸­ï¼Œéœ€è¦åœ¨dateä¸­å®šä¹‰baseUrl
 <template>
   <img :src="`${baseUrl}my-image.png`">
 </template>
@@ -148,19 +148,19 @@ publicÎÄ¼ş¼ĞÀïµÄ¾²Ì¬×ÊÔ´ÒıÓÃ
     }
   }
 </script>
-webpackÅäÖÃĞŞ¸Ä
-ÓÃwebpack-chainĞŞ¸ÄwebpackÏà¹ØÅäÖÃ£¨Ç¿ÁÒ½¨ÒéÏÈÊìÏ¤webpack-chainºÍvue-cliÔ´Âë£©
-¶ÔÄ£¿é´¦ÀíÅäÖÃ
+webpacké…ç½®ä¿®æ”¹
+ç”¨webpack-chainä¿®æ”¹webpackç›¸å…³é…ç½®ï¼ˆå¼ºçƒˆå»ºè®®å…ˆç†Ÿæ‚‰webpack-chainå’Œvue-cliæºç ï¼‰
+å¯¹æ¨¡å—å¤„ç†é…ç½®
 //vue.config.js
 module.exports={
   chainWebpack: config => {
     config.module
       .rule('js')
         .include
-          .add(/some-module-to-transpile/)  //Òª´¦ÀíµÄÄ£¿é
+          .add(/some-module-to-transpile/)  //è¦å¤„ç†çš„æ¨¡å—
   }
 }
-ĞŞ¸Äwebpack LoaderÅäÖÃ
+ä¿®æ”¹webpack Loaderé…ç½®
 //vue.config.js
 module.exports = {
   chainWebpack: config => {
@@ -174,7 +174,7 @@ module.exports = {
     )
   }
 }
-ĞŞ¸Äwebpack PluginÅäÖÃ
+ä¿®æ”¹webpack Pluginé…ç½®
 //vue.config.js
 module.exports = {
   chainWebpack: config => {
@@ -185,13 +185,13 @@ module.exports = {
     })
   }
 }
-eg:ÔÚ±¾´ÎÏîÄ¿½ÏĞ¡£¬Ö»¶Ôuglifyis½øĞĞÁËÉÙÁ¿µÄĞŞ¸Ä£¬ºóÆÚÈç¹û»¹ÓĞÅäÖÃÉÏÓÅ»¯»á¼ÌĞøÌí¼Ó¡£
+eg:åœ¨æœ¬æ¬¡é¡¹ç›®è¾ƒå°ï¼Œåªå¯¹uglifyisè¿›è¡Œäº†å°‘é‡çš„ä¿®æ”¹ï¼ŒåæœŸå¦‚æœè¿˜æœ‰é…ç½®ä¸Šä¼˜åŒ–ä¼šç»§ç»­æ·»åŠ ã€‚
 chainWebpack: confif => {
   if(process.env.NODE_ENV === "production"){
     config
       .plugin('uglify')
       .tap([options] => {
-        //È¥³ıconsole.log
+        //å»é™¤console.log
         return [Object.assign(options,{
           uglifyOptions: { compress: {
             drop_console: true,
@@ -201,19 +201,19 @@ chainWebpack: confif => {
       })
   }
 }
-È«¾Ö±äÁ¿µÄÉèÖÃ
-ÔÚÏîÄ¿¸ùÄ¿Â¼´´½¨ÒÔÏÂÏîÄ¿£º
-.env  #ÔÚËùÓĞ»·½ÚÖĞÖ´ĞĞ
-.env.local  #ÔÚËùÓĞ»·¾³ÖĞÖ´ĞĞ£¬git»áignored
-.env.[mode]  #Ö»ÔÚÌØ¶¨»·¾³Ö´ĞĞ([mode]¿ÉÒÔÊÇ"development","production" or "test")
-.env.[mode].local  #ÔÚÌØ¶¨»·¾³Ö´ĞĞ£¬git»áignored
-.env.development  #Ö»ÔÚÉú²ú»·¾³Ö´ĞĞ
-.env.production  #Ö»ÔÚ¿ª·¢»·¾³Ö´ĞĞ
-ÔÚÎÄ¼şÀïÅäÖÃ¼üÖµ¶Ô
-# ¼üÃûĞëÒÔVUE_App¿ªÍ·
+å…¨å±€å˜é‡çš„è®¾ç½®
+åœ¨é¡¹ç›®æ ¹ç›®å½•åˆ›å»ºä»¥ä¸‹é¡¹ç›®ï¼š
+.env  #åœ¨æ‰€æœ‰ç¯èŠ‚ä¸­æ‰§è¡Œ
+.env.local  #åœ¨æ‰€æœ‰ç¯å¢ƒä¸­æ‰§è¡Œï¼Œgitä¼šignored
+.env.[mode]  #åªåœ¨ç‰¹å®šç¯å¢ƒæ‰§è¡Œ([mode]å¯ä»¥æ˜¯"development","production" or "test")
+.env.[mode].local  #åœ¨ç‰¹å®šç¯å¢ƒæ‰§è¡Œï¼Œgitä¼šignored
+.env.development  #åªåœ¨ç”Ÿäº§ç¯å¢ƒæ‰§è¡Œ
+.env.production  #åªåœ¨å¼€å‘ç¯å¢ƒæ‰§è¡Œ
+åœ¨æ–‡ä»¶é‡Œé…ç½®é”®å€¼å¯¹
+# é”®åé¡»ä»¥VUE_Appå¼€å¤´
 VUE_APP_SECRET = secret
-ÔÚÏîÄ¿ÖĞ·ÃÎÊ:
+åœ¨é¡¹ç›®ä¸­è®¿é—®:
 console.log(process.env.VUE_APP_SECENT)
-ÕâÑùÏîÄ¿ÖĞµÄprocess.env.VUE_APP_SECENT¾Í»á±»secrentËùÌæ´ú¡£
+è¿™æ ·é¡¹ç›®ä¸­çš„process.env.VUE_APP_SECENTå°±ä¼šè¢«secrentæ‰€æ›¿ä»£ã€‚
 -->
 

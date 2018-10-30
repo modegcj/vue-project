@@ -1,16 +1,16 @@
-npxÊÇÒ»¸ö¹¤¾ß£¬Ö¼ÔÚÌá¸ß´Ónpm×¢²á±íÊ¹ÓÃÈí¼ş°üµÄÌåÑé £¬npmÊ¹µÃËü·Ç³£ÈİÒ×µØ°²×°ºÍ¹ÜÀíÍĞ¹ÜÔÚ×¢²á±íÉÏµÄÒÀÀµÏî£¬npxÊ¹µÃÊ¹ÓÃCLI¹¤¾ßºÍÆäËûÍĞ¹ÜÔÚ×¢²á±í¡£
+ï»¿npxæ˜¯ä¸€ä¸ªå·¥å…·ï¼Œæ—¨åœ¨æé«˜ä»npmæ³¨å†Œè¡¨ä½¿ç”¨è½¯ä»¶åŒ…çš„ä½“éªŒ ï¼Œnpmä½¿å¾—å®ƒéå¸¸å®¹æ˜“åœ°å®‰è£…å’Œç®¡ç†æ‰˜ç®¡åœ¨æ³¨å†Œè¡¨ä¸Šçš„ä¾èµ–é¡¹ï¼Œnpxä½¿å¾—ä½¿ç”¨CLIå·¥å…·å’Œå…¶ä»–æ‰˜ç®¡åœ¨æ³¨å†Œè¡¨ã€‚
 
-Ê¹ÓÃ±¾µØ°²×°µÄ¹¤¾ßÃ»ÓĞnpm run-script£º
-½«cowsay×÷Îª±¾µØdevDependency½øĞĞ°²×°£¬²¢Ê¹ÓÃ'$ npx cowsay'À´ÔËĞĞËü
+ä½¿ç”¨æœ¬åœ°å®‰è£…çš„å·¥å…·æ²¡æœ‰npm run-scriptï¼š
+å°†cowsayä½œä¸ºæœ¬åœ°devDependencyè¿›è¡Œå®‰è£…ï¼Œå¹¶ä½¿ç”¨'$ npx cowsay'æ¥è¿è¡Œå®ƒ
 
-Ö´ĞĞone-off commands£º
-'$ npx create-react-app my-cool-new-app'°²×°Ò»¸öÁÙÊ±µÄ´´½¨Ó¦´ğ³ÌĞò²¢µ÷ÓÃËü£¬¶ø²»»áÎÛÈ¾È«¾Ö°²×°»òĞèÒª¶à¸ö²½Öè
+æ‰§è¡Œone-off commandsï¼š
+'$ npx create-react-app my-cool-new-app'å®‰è£…ä¸€ä¸ªä¸´æ—¶çš„åˆ›å»ºåº”ç­”ç¨‹åºå¹¶è°ƒç”¨å®ƒï¼Œè€Œä¸ä¼šæ±¡æŸ“å…¨å±€å®‰è£…æˆ–éœ€è¦å¤šä¸ªæ­¥éª¤
 
-ÔËĞĞ²»Í¬Node.js°æ±¾µÄÃüÁî£º
-'npx -p node @ <version> node -v'¿ÉÒÔÓÃÀ´Ö´ĞĞ½Úµã°æ±¾µÄÒ»´ÎĞÔÔËĞĞ¡£
+è¿è¡Œä¸åŒNode.jsç‰ˆæœ¬çš„å‘½ä»¤ï¼š
+'npx -p node @ <version> node -v'å¯ä»¥ç”¨æ¥æ‰§è¡ŒèŠ‚ç‚¹ç‰ˆæœ¬çš„ä¸€æ¬¡æ€§è¿è¡Œã€‚
 
-npm run-script»¥¶¯·¢Õ¹
-`$ npx -p cowsay -p lolcatjs -c'echo"$ npm _package_name @ $ npm_package_version"|cowsay | lolcatjs'`°²×°cowsayºÍlolcatjs£¬²¢Ê¹½Å±¾´ÓÔËĞĞÆÚ¼ä·ÃÎÊÒ»¶Ñ"$ npm_"±äÁ¿¡£
+npm run-scriptäº’åŠ¨å‘å±•
+`$ npx -p cowsay -p lolcatjs -c'echo"$ npm _package_name @ $ npm_package_version"|cowsay | lolcatjs'`å®‰è£…cowsayå’Œlolcatjsï¼Œå¹¶ä½¿è„šæœ¬ä»è¿è¡ŒæœŸé—´è®¿é—®ä¸€å †"$ npm_"å˜é‡ã€‚
 
-shell×Ô¶¯»ØÍË£º
-½«.zshrcÖĞµÄnpx×Ô¶¯»ØÍËÒâÎ¶×ÅÄã¿ÉÒÔÔÚÃ»ÓĞÒıÓÃnpxµÄÇé¿öÏÂÖ´ĞĞ`$ ember-cli @ latest...`
+shellè‡ªåŠ¨å›é€€ï¼š
+å°†.zshrcä¸­çš„npxè‡ªåŠ¨å›é€€æ„å‘³ç€ä½ å¯ä»¥åœ¨æ²¡æœ‰å¼•ç”¨npxçš„æƒ…å†µä¸‹æ‰§è¡Œ`$ ember-cli @ latest...`
