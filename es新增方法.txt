@@ -50,3 +50,20 @@ console.log(entries.next().value);//[2, "c"]
 console.log(entries.next().value);//undefined
 
 
+ES6新增字符串的方法
+1.includes()返回布尔值，表示是否找到了参数字符串，第二个参数表示从第几个位置开始
+2.startsWith()返回布尔值，表示参数字符串是否在源字符串的头部，第二个参数表示从第几个位置开始
+3.endsWith()返回布尔值，表示参数字符串是否在源字符串的尾部，* 第二个参数是针对前几个字符串
+4.repeat()参数给多少，字符串就重复多少次
+5.padStart()第一个参数是限制字符串的长度，第二个要补的内容
+6.padEnd()结尾处补充
+7.字符串模板
+   let a = 'a';
+   let b = 'b';
+   console.log(`${a}${b}c`)
+   变量用${}包起来
+8.标签模板
+   function str(str,v1,v2){}
+   str`aaa${a}${b}c`
+   这个写法就相当于把这个字符串传到了function里，里面的参数第一个是纯字符串(被变量隔开后，以数组形式展示），
+   从第二个开始就是字符串里的变量了，有几个变量后面就有几个参数
