@@ -66,6 +66,8 @@ some() 方法会依次执行数组的每个元素：
 注意： some() 不会改变原始数组。
 
 
+
+
 ES6新增字符串的方法
 1.includes()返回布尔值，表示是否找到了参数字符串，第二个参数表示从第几个位置开始
 2.startsWith()返回布尔值，表示参数字符串是否在源字符串的头部，第二个参数表示从第几个位置开始
@@ -83,6 +85,46 @@ ES6新增字符串的方法
    str`aaa${a}${b}c`
    这个写法就相当于把这个字符串传到了function里，里面的参数第一个是纯字符串(被变量隔开后，以数组形式展示），
    从第二个开始就是字符串里的变量了，有几个变量后面就有几个参数
+9.codePointAt字符串查询
+   根据下标，查询对于字符串，相比于CharA他（），codePointAt有着更好地unicode支持
+
+
+
+
+ES6对象的新增方法
+1.属性的简洁表示法：
+ES6允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁
+const foo = 'foo'
+const baz = {foo}
+baz //{foo: "bar"}
+等同于：const baz = {foo: foo}
+function f(x,y){
+  return {x,y};
+}
+等同于：
+function f(x,y){
+  return {x: x,y: y};
+}
+f(1,2) //Object {x: 1,y: 2}
+除了属性简写，方法也可以简写
+const o = {
+  method(){
+    return "Hello!";
+  }
+};
+等同于：
+const o = {
+  method: function(){
+    return "Hello!";
+  }
+}
+
+
+
+
+
+
+
 
 
 ES6 Set和Map
@@ -129,3 +171,22 @@ map.get(['a']) // undefined
 如果Map的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，Map将其视为一个键，包括0和-0。另外，虽然NaN不严格相等于自身，但Map将其视为同一个键。
 实例属性和方法：size(只能用于对象，获取元素个数)、set、get、has、delete、clear
 遍历方法：keys（）、values（）、entries（）、forEach（）
+
+
+
+
+Promise()
+const promise = new Promise(function(resolve,reject){
+  if(/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error)
+  }
+});
+promise.then(function(value){
+  // success
+},function(value){
+  // failure
+})
+
+promise.then().catch().finally()
