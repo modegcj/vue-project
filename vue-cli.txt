@@ -217,3 +217,46 @@ console.log(process.env.VUE_APP_SECENT)
 这样项目中的process.env.VUE_APP_SECENT就会被secrent所替代。
 -->
 
+vue-cli3.0初体验：https://segmentfault.com/a/1190000014123259
+cli3.0没有build和config了，
+想要配置的话，需要在项目根目录下创建vue.config.js文件
+关于详细的配置信息，参考代码：
+// PWA 插件的选项。
+  // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli-plugin-pwa/README.md
+  pwa: {},
+
+  // 配置 webpack-dev-server 行为。
+  devServer: {
+    open: process.platform === 'darwin',
+    host: '0.0.0.0',
+    port: 8080,
+    https: false,
+    hotOnly: false,
+    // 查阅 https://github.com/vuejs/vue-doc-zh-cn/vue-cli/cli-service.md#配置代理
+    proxy: null, // string | Object
+    before: app => {
+      // `app` 是一个 express 实例
+    }
+  },
+
+  // 三方插件的选项
+  pluginOptions: {
+    // ...
+  }
+}
+由此处可以看出vue-cli-service就是配置文件
+package.json：
+{
+  "name": "asd",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build"
+  },
+  ...
+}
+vue-cli-service配置文件所在位置：@vue > cli-service > bin > vue-cli-service.js
+
+
+
