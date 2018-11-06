@@ -20,13 +20,20 @@
         <div class="map">
             <div id="container" class="mymap"></div>
         </div>
+        <app-form @consol="shuc"></app-form>
+        <app-button></app-button>
     </div>
 </template>
 <script>
 import Vue from 'vue'
 import AMap from 'AMap'
+import AppForm from '../common/form'
+import AppButton from '../common/button'
 export default {
     name: "ReverseDetails",
+    components:{
+        AppForm,AppButton
+    },
     data(){
         return{
             swiperOption:{
@@ -80,6 +87,9 @@ export default {
                     
                 })
             })
+        },
+        shuc(msg){
+            console.log(msg);
         }
     }
 }
@@ -87,6 +97,8 @@ export default {
 <style lang="scss" scoped>
 .reverse-details{
     width: 100%;
+    flex: 1;
+    overflow-y: auto; 
     .banner{
         height: 100px;
         .box{

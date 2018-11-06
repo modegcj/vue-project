@@ -18,7 +18,7 @@ import bus from '../../event.js'
 export default {
     name: "AppFooter",
     mounted(){
-
+        
     },
     methods:{
         toJump(){

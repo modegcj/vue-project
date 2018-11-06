@@ -22,7 +22,20 @@ export default {
     AppHeader,AppFooter
   },
   mounted(){
-    
+    if(/Android/.test(navigator.appVersion)){
+      document.ontouchstart = function(){
+        document.ontouchmove = function(){
+          return false;
+        }
+      };
+      window.addEventListener("resize", function() {
+          if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+              window.setTimeout(function() {
+                  document.activeElement.scrollIntoViewIfNeeded();
+              },0);
+          }
+      })
+    }
   }
 }
 </script>

@@ -11,21 +11,24 @@ export default {
     name: "AppHeader",
     mounted(){
         this.receive();
+        const user = {name:'lili',age:'2'};
+        const {name,age} = user;
+        const add = (state,{payload}) => {
+            return state.concat(name);
+        }
+        console.log(add([1,2],{name:'lihua',age:'2'}));
     },
     methods:{
         receive(){
             bus.$on('nowHref',(data)=>{
                 if(/index/g.test(data)){
-                    
+                    console.log("这是首页");
                 }else if(/orderlist/g.test(data)){
-                    
+                    console.log("这是订单列表页");
                 }else if(/reversedetails/g.test(data)){
-                    
+                    console.log("这是预定详情页");
                 }
             })
-        },
-        toJump(){
-            
         }
     }
 }
