@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>banquet</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div id="demo">
+            
+        </div>
+        <button type="button" id="btn">更改</button>
+    </body>
+    <script>
+        var obj = {key:'static'};
+        var descriptor = Object.create(null);
+        var oBtn = document.getElementById("btn");
+        var oDemo = document.getElementById("demo");
+        // descriptor.value = 'static';
+        // Object.defineProperty(obj,'key',descriptor);
+        // Object.defineProperty(obj,'key',{
+        //     enumerable: false,
+        //     configurable: false,
+        //     writable: false,
+        //     value: "static"
+        // })
+        function withValue(value){
+            var d = withValue.d || (
+                withValue.a = {
+                    enumerable: false,
+                    writable: false,
+                    configurable: false,
+                    value: null,
+                    get(){
+                        console.log('get!');
+                        return obj;
+                    },
+                    set(value){
+                        obj = value
+                    }
+                }
+            );
+            d.value = value;
+            return d;
+        }
+        // Object.defineProperty(obj,"key",withValue("static"));
+        oBtn.onclick=function(){
+            Object.defineProperty(obj,"key",withValue("更改成功"));
+            console.log(obj);
+        }
+        oDemo.innerText=obj.key;
+        
+    </script>
+</html>

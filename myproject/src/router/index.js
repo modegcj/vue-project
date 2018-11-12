@@ -7,6 +7,7 @@ import AppIndex from '@/components/index/Index'
 import OrderList from '@/components/order/OrderList'
 import OrderDetails from '@/components/order/OrderDetails'
 import ReverseDetails from '@/components/reverse/ReverseDetails'
+import AppPractice from '@/components/practice/AppPractice'
 
 export default new Router({
   routes: [
@@ -33,6 +34,11 @@ export default new Router({
       path:'/reversedetails',
       name:'reversedetails',
       component:ReverseDetails
+    },
+    {
+      path:'/practice',
+      name:'practice',
+      component:AppPractice
     }
   ]
 })

@@ -13,7 +13,7 @@
         <div class="hotels">
             <div class="title">
                 <div class="select">推荐</div>
-                <div>去过的餐厅</div>
+                <router-link to='/practice' tag="div">去过的餐厅</router-link>
             </div>
             <ul class="list">
                 <li v-for="hotel in hotels" :key="hotel.id">
