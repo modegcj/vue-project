@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>我的</title>
+    </head>
+    <body>
+        <input type="number" name="num" id="num">
+        <input type="button" id="btn" value="点击更改">
+    </body>
+    <script>
+        var oNum = document.getElementById("num");
+        var oBtn = document.getElementById("btn");
+        function setData(){
+            var data = null;
+            Object.defineProperty(this,'data',{
+                get(){
+                    return 2;
+                },
+                set(value){
+                    oNum.value = value;
+                }
+            })
+        }
+        var obj = new setData();
+        var number = 1;
+        oBtn.onclick = function(){
+            number ++;
+            obj.data = number;
+            console.log(obj.data);
+        }
+        
+    </script>
+</html>

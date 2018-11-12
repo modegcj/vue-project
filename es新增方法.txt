@@ -190,3 +190,42 @@ promise.then(function(value){
 })
 
 promise.then().catch().finally()
+
+
+其他方法：
+Object.defineProperty(obj,prop,descriptor)  直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回这个对象
+  • obj：要在其上定义属性的对象
+  • prop：要定义或修改的属性的名称
+  • descriptor：将被定义或修改的属性描述符
+返回值：被传递给函数的对象
+属性描述符：
+  configurable：当且仅当configurable为true时，该属性描述符才能够被改变，同时该属性也能从对应的对象上被删除。默认false
+  enumerable：当且仅当该属性的enumerable为true时，该属性才能够出现在对象的枚举属性中。默认为false
+  value：该属性对应的值。可以是任何有效的JavaScript值（数值，对象，函数等）。默认为underfined
+  writable：当且仅当该属性的writable为true时，value才能被赋值运算符改变。默认为false
+  get：一个给属性提供getter的方法，如果没有getter则为undefined。当访问该属性时，该方法会被执行，方法执行时没有参数传入，但是会传入this对象（由于
+      继承关系，这里的this并不一定是定义该属性的对象）。默认为undefined
+  set：一个给属性提供setter的方法，如果没有setter则为undefined。当属性值修改时，触发执行该方法。该方法将接受唯一参数，即该属性新的参数值。
+
+Object.defineProperties(obj,props)  直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
+  • obj：在其上定义或修改属性的对象
+  • props：要定义其可枚举属性或修改的属性描述符的对象。对象中存在的属性描述符主要有两种：数据描述符和访问器描述符，描述符同上属性描述符
+
+Object.create(proto,[propertiesObject]) 创建一个新对象，使用现有的对象来提供新创建的对象的_proto_。
+  • proto：新创建对象的原型对象
+  • propertiesObject：如果没有指定为undefined，否则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述
+                      符以及相应的属性名称。这些属性对应Object.defineProperties()的第二个参数
+
+Object.assign(target,...sources)  将所有可枚举属性的值从一个或多个源对象复制到目标对象，返回目标对象
+  • target：目标对象
+  • source：源对象
+
+Object.entries(obj) 返回一个给定对象自身可枚举属性的键值对数组，其排列与使用for...in循环遍历该对象时返回的顺序一致（区别在于for-in循环也枚举原型链中的属性）
+  • obj：可以返回其可枚举属性的键值对的对象
+
+Object.freeze(obj)  可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可
+                    配置性、可写性，该方法返回被冻结的对象
+  • obj：要被冻结的对象
+
+Object.fromEntries(iterable)  把键值对列表转换为一个对象，返回一个包含提供的可迭代对象条目的对象属性的新对象
+  • iterable：类似实现了可迭代协议Array或者Map或者其他对象的可迭代对象

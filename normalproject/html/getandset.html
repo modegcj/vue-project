@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>getANDset</title>
+    </head>
+    <body>
+        <input type="text" name="text" readonly id="text" value="">
+        <button type="button" id="btn">点击更改</button>
+    </body>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oText = document.getElementById("text")
+        function Archivber(){
+            var temperature = null;
+            var archive = [];
+
+            Object.defineProperty(this,'temperature',{
+                get(){
+                    return temperature;
+                },
+                set(value){
+                    temperature = value;
+                    archive.push({val:temperature});
+                    oText.value = temperature;
+                }
+            });
+            this.getArchive = function(){
+                return archive;
+            }
+        }
+        var arc = new Archivber();
+        arc.temperature;
+        var number = 1;
+        oBtn.onclick = function(){
+            number ++;
+            arc.temperature = number;
+        }
+    </script>
+</html>
