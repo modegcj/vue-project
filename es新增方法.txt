@@ -223,9 +223,6 @@ Object.freeze(obj)  可以冻结一个对象，冻结指的是不能向这个对
 Object.isFrozen(obj)  判断一个对象是否被冻结
   • obj：被检测的对象
 
-Object.fromEntries(iterable)  把键值对列表转换为一个对象，返回一个包含提供的可迭代对象条目的对象属性的新对象
-  • iterable：类似实现了可迭代协议Array或者Map或者其他对象的可迭代对象
-
 Object.isSealed(obj)  判断一个对象是否被密封
   • obj：被检测的对象
 （密封对象是指那些不可扩展的，且所有自身属性都不可配置且因此不可删除（但不一定是不可写）的对象）
