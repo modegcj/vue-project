@@ -5,28 +5,52 @@
         <title></title>
     </head>
     <body>
-        
+        <div id="text">是</div>
+        <button id="btn" type="button">点击更改</button>
     </body>
     <script>
-        class Polygon{
-            constructor(height){
-                this.name = 'Polygon';
-                this.height = height;
-            }
-            sayName(){
-                console.log(this.name);
-            };
+        // class Polygon{
+        //     constructor(height){
+        //         this.name = 'Polygon';
+        //         this.height = height;
+        //     }
+        //     sayName(){
+        //         console.log(this.name);
+        //     };
+        // }
+        // class Square extends Polygon{
+        //     constructor(height){
+        //         super(height);
+        //         this.name = 'Square'
+        //     }
+        // }
+        // var a = new Square(12);
+        // var b = new Polygon(12);
+        // console.log(a);
+        // a.sayName.call(Polygon);
+        // a.sayName();
+        var oText = document.getElementById("text");
+        var oBtn = document.getElementById("btn");
+        function setData(){
+            var data = null;
+            Object.defineProperty(this,'data',{
+                get(){
+                    
+                },
+                set(bol){
+                    if(bol){
+                        oText.innerText = "是"
+                    }else{
+                        oText.innerText = "否"
+                    }
+                }
+            })
         }
-        class Square extends Polygon{
-            constructor(height){
-                super(height);
-                this.name = 'Square'
-            }
+        var obj = new setData();
+        var isTrue = true;
+        oBtn.onclick = function(){
+            isTrue = !isTrue;
+            obj.data = isTrue;
         }
-        var a = new Square(12);
-        var b = new Polygon(12);
-        console.log(a);
-        a.sayName.call(Polygon);
-        a.sayName();
     </script>
 </html>
