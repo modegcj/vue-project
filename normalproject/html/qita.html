@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title></title>
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        class Polygon{
+            constructor(height){
+                this.name = 'Polygon';
+                this.height = height;
+            }
+            sayName(){
+                console.log(this.name);
+            };
+        }
+        class Square extends Polygon{
+            constructor(height){
+                super(height);
+                this.name = 'Square'
+            }
+        }
+        var a = new Square(12);
+        var b = new Polygon(12);
+        console.log(a);
+        a.sayName.call(Polygon);
+        a.sayName();
+    </script>
+</html>
