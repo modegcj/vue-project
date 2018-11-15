@@ -1,6 +1,6 @@
 <template>
     <div class="app-practice">
-
+        
     </div>
 </template>
 <script>
@@ -17,5 +17,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+.app-practice{
+    width: 100%;
+    overflow-y: auto;
+}
 </style>
