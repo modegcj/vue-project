@@ -1,0 +1,7 @@
+mvc模式是mvp和mvvm模式的基础
+mvc允许在不改变视图的情况下改变视图对用户输入的响应方式，用户对view的操作交给了Controller处理，在controller中响
+应view的事件调用model的接口对数据进行操作，一旦model发生变化便通知相关视图进行更新。
+
+
+mvvm与mvc的最大的区别就是：mvvm实现了view和model的自动同步，也就是当model的属性改变时，我们不用在自己手动操作Dom
+元素来改变view的显示，而是改变属性后改属性对应view层显示会自动改变。

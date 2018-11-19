@@ -199,3 +199,91 @@ module.exports = {
                 ]
         }
 }
+
+
+
+webpack配置详解：
+entry：入口文件
+output：输出
+        · path：输出文件的目录
+        · filename：输出的文件名，它一般跟entry配置相对应，如js/[name].js  name在这里表示的是[index、vendors]
+        · chunkFilename：块，配置了它，非入口entry的模块，会帮自动拆分文件，也就是按需加载，与路由中的require.ensure
+          相呼应
+        · publicPath：文件输出的公共路径
+        · pathinfo：即保留相互依赖的包中的注释信息，这个基本不用主动配置，它默认development模式时的默认值是true，
+          而在production模式时的默认值是false
+        · 其他如：library、libraryTarget、auxiliaryComment
+hash：
+        · hash：模块标识符的hash，一般应用于filename:'[name].[hash].js'
+        · chunkhash：按需加载块内容的hash，根据chunk自身的内容计算而来，'js/[name].[chunkhash:8].js'
+        · contenthsah：在提取css文件是根据内容计算而来的hash，结合ExtractTextWebpackPlugin插件使用
+        · hash长度：默认20，可自定：[hash:8]、[chunkhash:16]
+mode（webpack4新增，之前用DefinePlugin插件配置）:'development/production/none'
+        · development：开发模式，打包的代码不会被压缩，开启代码调试
+        · production：生产模式，与上相反
+devtool：
+        · 控制是否生产，以及如何生成source map文件，开发环境下更有利于定位问题，默认false
+        · 它的开启会影响编译速度，所以生产环境要关闭
+        · 常用的值：cheap-eval-source-map、eval-source-map、cheap-module-eval-source-map、inline-cheap-module-source-map等
+optimization（webpack4新增）：
+        · 主要用来让开发者根据需要自定义一些优化构建打包的策略配置
+        · minimize：true/false，告诉webpack是否开启代码最小化压缩
+        · minimizer：自定js优化配置，会覆盖默认的配置，结合UglifyJsPlugin插件优化
+        · removeEmptyChunks：bool值，它检测并删除空的块。将设置为false将禁用此优化
+        · nodeEnv：它并不是node里的环境变量，设置后可以在代码里使用process.env.NODE_ENV === 'development'来判断一些逻辑，生产环
+          境UglifyJsPlugin会自动删除无用代码
+        · splitChunks：取代了CommonsChunkPlugin，自动分包拆分、代码拆分，详细默认配置
+        splitChunks:{
+                chunks:'async/all/initial',
+                minSize:30000,
+                maxSize:0,
+                minChunks:1,
+                maxAsyncRequests:5,
+                maxInitialRequests:3,
+                automaticNameDelimiter:'~',
+                name:true,
+                cacheGroups:{
+                        vendors:{
+                                test:/[\\/]node_modules[\\/]/,
+                                priority:-10
+                        },
+                        default:{
+                                minChunks:2,
+                                priority:-20,
+                                reuseExistingChunk:true
+                        }
+                }
+        }
+        · runtimeChunk：提取webpack运行时代码，它可以设置为：boolean、object，该配置开启时，会覆盖入口指定的名称
+resolve：配置模块如何解析
+        · extensions：自动解析确定的扩展，省去引入组件时写后缀的麻烦
+        · alias：非常重要的一个配置，可以配置一些段路径
+        · modeules：webpack解析模块时应该搜索的目录
+        · 其他：plugins、unsafeCache、enforceExtension
+module.rules：编译规则
+        · rules：即之前的loaders
+        · test：正则表达式，匹配编译的文件
+        · exclude：排除特定条件，通常会写node_modules，即把某些目录/文件过滤掉
+        · use:[
+                {
+                        loader:'babel-loader/style-loader/sass-loader/url-loader等',
+                        options:[]
+                }
+        ]
+        use>loader：必须填写，相当于是一个test匹配到的文件对应的解析器
+        use>options：与loader配合使用，可以是一个字符串或对象，它的配置可以直接简写在loader内一起它下面还有presets、plugins等属性
+        项目中常用loader：
+                · babel-loader、awesome-typescript-loader js*/ts编译
+                · css-loader、postcss-loader、sass-loader、less-loader、style-loader等css样式处理
+                · file-loader、url-loader、html-loader等图片/svg/html等的处理
+        plugins/loader区别:
+                loader的作用在于解析文件，比如把ES6转换成ES5，甚至ES3；把Sass、Less解析成css，给css自动加上兼容的前缀；对图片进行一
+                个解析等等
+                对loader干的事情进行优化分类、提取精华（公共代码提取）、做压缩处理（js/css/html压缩）、输出指定的目录等
+webpack-dev-server：
+        · contentBase：告诉服务(dev server)在哪里查找文件，默认不指定会在是当前项目根目录
+        · historyApiFallback：可以是boolean、object，默认响应的入口文件，包括404都会指向这里
+        · compress：启用gzip压缩
+        · publicPath：即output>publicPath，当改变后会覆盖output的配置
+        · stats：可以自定控制要显示的编译细节信息
+        · proxy：即http-proxy-middleware，可以进行处理一些代理的请求

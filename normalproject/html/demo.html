@@ -3,15 +3,72 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>原型和闭包</title>
+        <title>demo</title>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <style>
+            
         </style>
     </head>
     <body>
-        <button id="btn" type="button">点击按钮</button>
+        
     </body>
     <script>
-        
+        // function takeLongTime(n){
+        //     return new Promise(resolve => {
+        //         setTimeout(() => resolve(n + 200),n);
+        //     });
+        // }
+        // function step1(n){
+        //     console.log(`step1 with ${n}`);
+        //     return takeLongTime(n);
+        // }
+        // function step2(m,n){
+        //     console.log(`step2 with ${m} and ${n}`);
+        //     return takeLongTime(m + n);
+        // }
+        // function step3(k,m,n){
+        //     console.log(`step3 with ${k},${m} and ${n}`);
+        //     return takeLongTime(k + m + n);
+        // }
+        // function doIt(){
+        //     console.time("doIt");
+        //     const time1 = 300;
+        //     step1(time1)
+        //         .then(time2 => {
+        //             return step2(time1,time2)
+        //                 .then(time3 => [time1,time2,time3]);
+        //     })
+        //     .then(times => {
+        //         const [time1,time2,time3] = times;
+        //         return step3(time1,time2,time3);
+        //     })
+        //     .then(result => {
+        //         console.log(`result is ${result}`)
+        //         console.timeEnd("doIt");
+        //     })
+        // }
+        // doIt();
+        var Parent = function(name){
+            this.name = name;
+            this.sayHi = function(){
+                console.log("Hi! " + this.name +".")
+            }
+        }
+        var Children = function(name){
+            this.method = Parent;
+            this.method(name);
+            delete this.method;
+
+            this.getName = function(){
+                console.log(this.name);
+            }
+        }
+
+        var p = new Parent("john");
+        var c = new Children("joe");
+
+        p.sayHi();
+        c.sayHi();
+        c.getName();
     </script>
 </html>
