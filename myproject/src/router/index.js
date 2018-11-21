@@ -38,7 +38,8 @@ export default new Router({
     {
       path:'/practice',
       name:'practice',
-      component:AppPractice
+      component:AppPractice,
+      meta:{ requiresAuth: true }
     }
   ]
 })

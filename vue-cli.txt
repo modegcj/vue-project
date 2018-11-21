@@ -1,4 +1,6 @@
-﻿cnpm install -g vue-cli
+﻿nuxt
+
+cnpm install -g vue-cli
 vue init webpack {{项目名}}
 
 @vue-cli 3.0

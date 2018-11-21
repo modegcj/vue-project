@@ -56,7 +56,12 @@ every() 方法使用指定函数检测数组中的所有元素：
 如果所有元素都满足条件，则返回 true。
 注意： every() 不会对空数组进行检测。
 注意： every() 不会改变原始数组。
-7.Array.come()
+function(currentValue,index,arr)    必须；函数，数组中的每个元素都会执行这个函数
+    currentValue：必须；当前元素的值
+    index：可选；元素的索引值
+    arr：可选；当前元素属于的数组对象
+thisValue：可选；对象作为该执行回调时使用，传递给函数，用作“this”的值。如果省略了thisValue，“this”的值为“undefined”
+7.Array.some()
 array.some(function(currentValue,index,arr),thisValue)
 some() 方法用于检测数组中的元素是否满足指定条件（函数提供）。
 some() 方法会依次执行数组的每个元素：
@@ -86,7 +91,7 @@ ES6新增字符串的方法
    这个写法就相当于把这个字符串传到了function里，里面的参数第一个是纯字符串(被变量隔开后，以数组形式展示），
    从第二个开始就是字符串里的变量了，有几个变量后面就有几个参数
 9.codePointAt字符串查询
-   根据下标，查询对于字符串，相比于CharA他（），codePointAt有着更好地unicode支持
+   根据下标，查询对于字符串，相比于CharAt（），codePointAt有着更好地unicode支持
 
 
 
@@ -175,7 +180,7 @@ map.get(['a']) // undefined
 
 
 
-Promise()
+Promise() (IE兼容：bluebird.js)
 const promise = new Promise(function(resolve,reject){
   if(/* 异步操作成功 */){
     resolve(value);
