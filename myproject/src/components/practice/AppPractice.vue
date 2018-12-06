@@ -4,18 +4,20 @@
     </div>
 </template>
 <script>
+import Vue from 'vue';
 export default {
     name: 'AppPractice',
     data(){
         return{
-
+            isShow: true,
+            a: '123'
         }
     },
     components:{
         
     },
     mounted(){
-        console.log(this.$router)
+        console.log(this.$isServer);
     }
 }
 </script>
