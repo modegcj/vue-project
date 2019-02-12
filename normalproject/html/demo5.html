@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title></title>
+    </head>
+    <body>
+    </body>
+    <script>
+        // let arr = [1,2,3];
+        // let obj = {};
+        // Object.defineProperty(obj,'arr',{
+        //     get(){
+        //         console.log('get arr');
+        //         return arr
+        //     },
+        //     set(newVal){
+        //         console.log('set',newVal)
+        //         arr = newVal
+        //     }
+        // })
+        // obj.arr.push(4)
+        // obj.arr = [1,2,3,4];
+
+
+        // const aryMethods = ['push','pop','shift','unshift','splice','sort','reverse'];
+        // const arrayAugmentations = [];
+        // aryMethods.forEach((method)=>{
+        //     let original = Array.prototype[method];
+        //     arrayAugmentations[method] = function(){
+        //         console.log('我被改变了！');
+        //         return original.apply(this,arguments);
+        //     }
+        // });
+        // let list = ['a','b','c'];
+        // list.__proto__ = arrayAugmentations;
+        // list.push('d');
+        // let list2 = ['a','b','c'];最近更新
+        // list2.push('d');
+
+
+        // let obj = {
+        //     name: 'Eason',
+        //     age: 30
+        // };
+        // let handler = {
+        //     get (target,key,receiver){
+        //         console.log('get',key)
+        //         return Reflect.get(target,key,receiver)
+        //     },
+        //     set(target,key,value,receiver){
+        //         console.log('set',key,value)
+        //         return Reflect.set(target,key,value,receiver)
+        //     }
+        // };
+        // let proxy = new Proxy(obj,handler);
+        // proxy.name = 'Zoe';
+        // proxy.age = 18;
+
+
+        // let obj = {
+        //     info:{
+        //         name:'eason',
+        //         blogs:['webpack','babel','cache']
+        //     }
+        // }
+        // let handler = {
+        //     get(target,key,receiver){
+        //         console.log('get',key);
+        //         if(typeof target[key] === 'object' && target[key] !== null){
+        //             return new Proxy(target[key],handler)
+        //         }
+        //         return Reflect.get(target,key,receiver)
+        //     },
+        //     set(target,key,value,receiver){
+        //         console.log('set',key,value)
+        //         return Reflect.set(target,key,value,receiver)
+        //     }
+        // }
+        // let proxy = new Proxy(obj,handler);
+        // proxy.info.name = 'Zoe';
+        // proxy.info.blogs.push('proxy');
+
+        // 多继承
+        // let foo = {
+        //     foo(){
+        //         console.log('foo')
+        //     }
+        // }
+        // let bar = {
+        //     bar () {
+        //         console.log('bar')
+        //     }
+        // }
+        // let sonOfFoo = Object.create(foo);
+        // sonOfFoo.foo();
+        // let sonOfBar = Object.create(bar);
+        // sonOfBar.bar();
+        // let sonOfFooBar = new Proxy({},{
+        //     get(target,key){
+        //         return target[key] || foo[key] || bar[key];
+        //     }
+        // })
+        // sonOfFooBar.foo();
+        // sonOfFooBar.bar();
+
+        // 隐藏私有属性
+        // function getObject(rawObj,privatekeys){
+        //     return new Proxy(rawObj,{
+        //         get(target,key,receiver){
+        //             if(privatekeys.indexOf(key) !== -1){
+        //                 throw new ReferenceError(`${key}是私有属性，不能访问。`)
+        //             }
+        //             return target[key]
+        //         }
+        //     })
+        // }
+        // let rawObj = {
+        //     name:'Zoe',
+        //     age: 18,
+        //     isFemale:true
+        // }
+        // let obj = getObject(rawObj,['age'])
+        // console.log(obj.name)
+        // console.log(obj.age)
+
+        // 对象属性的设定时校验
+        let person = {
+            name: 'Eason',
+            age: 30
+        }
+        let handler = {
+            set(target,key,value,receiver){
+                if(key === 'name' && typeof value !== 'string'){
+                    throw new Error('用户姓名必须是字符串类型')
+                }
+                if(key === 'age' && typeof value !== 'number'){
+                    throw new Error('用户年龄必须是数字类型')
+                }
+                return Reflect.set(target,key,value,receiver)
+            }
+        }
+        let personForUser = new Proxy(person,handler)
+        personForUser.name = 'Zoe'
+        personForUser.age = '18'
+    </script>
+</html>

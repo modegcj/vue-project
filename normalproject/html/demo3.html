@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>JSONP实现跨域</title>
+    </head>
+    <body>
+        <div id="box">
+            <button id='btn'>点击</button>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var name = 'aaa';
+        let obj = {
+            name: 'jack',
+            fn1: ()=>{
+                console.log(this.name);
+            }
+        }
+        obj.fn1();
+        var obj1 = {
+            name: 'sam',
+            fn1:function(){
+                console.log(this.name);
+            }
+        }
+        obj1.fn1();
+    </script>
+</html>
