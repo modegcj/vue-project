@@ -5,7 +5,7 @@
         <title>标题</title>
     </head>
     <body>
-        
+        <a href="http://yh1.shengyan.com.cn:8080/#/orderdetails">跳转</a>
     </body>
     <script>
         // const fs = require('fs');
@@ -27,6 +27,31 @@
         //     // do nothing
         // }
         // });
-
+        var a = [];
+        function Foo(){
+            getName = function () {
+                a.push('1');
+            };
+            return this;
+        }
+        Foo.getName = function(){
+            a.push('2');
+        }
+        Foo.prototype.getName = function () {
+            a.push('3')
+        }
+        var getName = function () {
+            a.push('4')
+        }
+        function getName(){
+            a.push('5')
+        }
+        console.log(Foo.getName());
+        console.log(getName());
+        console.log(Foo().getName());
+        console.log(getName());
+        console.log(new Foo.getName());
+        console.log(new Foo().getName());
+        console.log(new new Foo().getName());
     </script>
 </html>
